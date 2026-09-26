@@ -1,10 +1,59 @@
-# StockSense — Inventory Management System
+<div align="center">
 
-> Odoo Hackathon submission. A modular IMS that replaces manual registers, Excel sheets, and
-> scattered tracking with one centralized, real-time app.
+# 📦 StockSense
+### *Next-Generation Ledger-Driven Inventory Management System*
 
-**Team:** Sudhanshu Biswas · Ayush Patil · Shubham Rangdal
-**Build window:** 5 hours
+**An enterprise-grade, modular IMS replacing fragmented spreadsheets and manual registers with a real-time, immutable double-entry inventory ledger.**
+
+<p align="center">
+  <a href="https://github.com/ayush300302/StockLedger"><img src="https://img.shields.io/badge/Odoo_Hackathon-2026_Submission-714B67?style=for-the-badge&logo=odoo&logoColor=white" alt="Odoo Hackathon 2026"></a>
+  <a href="https://github.com/ayush300302/StockLedger"><img src="https://img.shields.io/badge/Sprint-5--Hour_Build_Window-0284c7?style=for-the-badge&logo=clock&logoColor=white" alt="5-Hour Build"></a>
+  <a href="https://github.com/ayush300302/StockLedger"><img src="https://img.shields.io/badge/Architecture-Immutable_Ledger-7c3aed?style=for-the-badge&logo=databricks&logoColor=white" alt="Architecture"></a>
+  <a href="https://supabase.com"><img src="https://img.shields.io/badge/Backend-Supabase_PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase"></a>
+  <a href="https://react.dev"><img src="https://img.shields.io/badge/Frontend-React_18_+_Vite-61dafb?style=for-the-badge&logo=react&logoColor=black" alt="React"></a>
+  <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/Styling-Tailwind_CSS-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS"></a>
+</p>
+
+---
+
+<p align="center">
+  <a href="#1-the-core-idea-read-this-before-writing-any-code"><b>💡 The Core Idea</b></a> •
+  <a href="#-documentation--deliverables"><b>📚 Documentation</b></a> •
+  <a href="#2-tech-stack"><b>🛠️ Tech Stack</b></a> •
+  <a href="#3-data-model"><b>🗄️ Data Model</b></a> •
+  <a href="#4-features--requirement-mapping"><b>🎯 Requirements</b></a> •
+  <a href="#8-getting-started"><b>🚀 Quick Start</b></a> •
+  <a href="#-team--roles"><b>👥 Team</b></a>
+</p>
+
+---
+
+</div>
+
+> [!IMPORTANT]
+> **The Immutable Ledger Guarantee:** In StockSense, on-hand inventory quantity is **never statically stored** on product rows. All balances are derived on-the-fly via the `stock_on_hand` view over the append-only `stock_move` transaction ledger. This mathematically guarantees 100% auditability and eliminates synchronization bugs, race conditions, and ledger discrepancies.
+
+### 👥 Team & Roles
+| Contributor | Focus & Responsibilities | GitHub Profile |
+| :--- | :--- | :--- |
+| **Sudhanshu Biswas** | System Architecture, Postgres Relational Schema, Derived Views & RPCs | [@SudhanshuBiswas01](https://github.com/SudhanshuBiswas01) |
+| **Ayush Patil** | Frontend Engineering, Ledger UI, TanStack State Management & Routing | [@ayush300302](https://github.com/ayush300302) |
+| **Shubham Rangdal** | Document State Machines (`Draft` ➔ `Done`), Validations & Testing | Core Team |
+
+### ⚡ Build Specifications
+- **Build Window:** 5 Hours (Hourly commit cadence `h0` … `h5`)
+- **Submission:** Odoo Hackathon 2026
+- **Architecture Paradigm:** Double-entry ledger (`VENDOR` / `CUSTOMER` / `INVENTORY_LOSS` ↔ Internal locations)
+
+### 📚 Documentation & Deliverables
+| Document | Purpose & Overview |
+| :--- | :--- |
+| 📋 [**`docs/PRD.md`**](docs/PRD.md) | Personas, user stories, functional/non-functional requirements, KPIs & acceptance gates |
+| 🏛️ [**`docs/HLD.md`**](docs/HLD.md) | High-Level Design: System architecture, relational design, state machines & ADRs |
+| ⏱️ [**`docs/BUILD_PLAN.md`**](docs/BUILD_PLAN.md) | 5-hour breakdown, hourly checkpoints (`h0`–`h5`), git strategy & contingency paths |
+| 🤖 [**`docs/MASTER_PROMPTS.md`**](docs/MASTER_PROMPTS.md) | Phase-wise orchestrator prompts with strict architectural guardrails for AI coding agents |
+| 🗄️ [**`db/schema.sql`**](db/schema.sql) | DDL: Tables, constraints, `stock_on_hand` derived view, RLS policies & RPC validation functions |
+| 🌱 [**`db/seed.sql`**](db/seed.sql) | Complete demo dataset with warehouses, sample locations, categorized products & test moves |
 
 ---
 
